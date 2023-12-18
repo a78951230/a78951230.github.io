@@ -1,0 +1,29 @@
+<html>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<video id="video"></video>
+<script>
+  if(Hls.isSupported()) {
+    var video = document.getElementById('video');
+    var hls = new Hls();
+    hls.loadSource('https://bestradiow-hichannel.cdn.hinet.net/live/RA000010/chunklist.m3u8?token=CEC8i2YsgO1VmBRs5xir1Q&expires=1702993230');
+	
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+      video.play();
+  });
+ }
+ /*if(Hls.isSupported()) {
+    var video = document.getElementById('video');
+    var hls = new Hls();
+    hls.loadSource('https://bestradiow-hichannel.cdn.hinet.net/live/RA000012/chunklist.m3u8?token=gXbWLPLtgMnl8HYpdKoBIA&expires=1702993230');
+	
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+      video.play();
+  });
+ }
+ */
+</script>
+</body>
+</html>
